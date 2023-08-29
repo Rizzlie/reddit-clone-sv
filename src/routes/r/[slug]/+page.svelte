@@ -8,5 +8,7 @@
 </h1>
 
 {#each $page.data.subreddit.posts as post}
-	<Post {post} interactive={true} showSubreddit={false} />
+	<div class="mb-6">
+		<Post {post} interactive={true} showSubreddit={false} />
+	</div>
 {/each}
