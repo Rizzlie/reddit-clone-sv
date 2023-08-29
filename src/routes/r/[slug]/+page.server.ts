@@ -14,7 +14,14 @@ export const load: PageServerLoad = async ({ params }) => {
 				include: {
 					author: true,
 					votes: true,
-					comments: true
+					comments: true,
+					Subreddit: true,
+					_count: {
+						select: {
+							comments: true,
+							votes: true
+						}
+					}
 				},
 				orderBy: {
 					createdAt: 'desc'

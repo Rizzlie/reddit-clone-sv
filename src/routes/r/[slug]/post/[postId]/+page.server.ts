@@ -20,7 +20,8 @@ export const load: PageServerLoad = async ({ params }) => {
 			},
 			_count: {
 				select: {
-					comments: true
+					comments: true,
+					votes: true
 				}
 			}
 		}
