@@ -15,7 +15,9 @@
 		Posted by r/{post.author.name} on {date}
 	</small>
 </p>
-<div class="border-input border-l border-r border-t bg-white p-2">
+<div
+	class="border-input border-l border-r border-t bg-white p-2 dark:border-slate-800 dark:bg-slate-900"
+>
 	<h1 class="text-xl font-semibold">
 		{post.title}
 	</h1>
@@ -23,6 +25,8 @@
 		{post.content?.text}
 	</div>
 </div>
-<div class="border-input border-b border-l border-r bg-slate-50 p-2 text-sm">
+<div
+	class="border-input border-b border-l border-r bg-slate-50 p-2 text-sm dark:border-slate-800 dark:bg-slate-800"
+>
 	{post._count.comments} Comments
 </div>

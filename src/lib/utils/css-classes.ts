@@ -1,6 +1,6 @@
 const theme = {
 	controls: {
-		border: ['border', 'border-input', 'rounded-md'],
+		border: ['border', 'border-input', 'rounded-md', 'dark:border-slate-800'],
 		focus: [
 			'focus-visible:ring-ring',
 			'ring-offset-background',
@@ -10,7 +10,7 @@ const theme = {
 		],
 		placeholder: ['placeholder:text-muted-foreground'],
 		spacing: ['px-3', 'py-2'],
-		background: ['bg-white'],
+		background: ['bg-white', 'dark:bg-slate-900'],
 		font: ['text-sm'],
 		states: ['disabled:cursor-not-allowed', 'disabled:opacity-50'],
 		size: ['w-full'],

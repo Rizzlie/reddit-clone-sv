@@ -9,7 +9,7 @@
 	const fullDate = new Date(comment.createdAt).toLocaleString();
 </script>
 
-<div class="mb-6 border bg-white p-4">
+<div class="mb-6 border bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
 	<div class="flex items-center">
 		<img class="mr-2 h-8 w-8 rounded-full" src={user.image} alt={user.name} />
 		<p class="text-sm">

@@ -15,7 +15,10 @@
 
 <style lang="postcss">
 	:global(html) {
-		background-color: theme(colors.white);
-		color: theme(colors.slate.900);
+		@apply bg-slate-50 text-slate-900  dark:bg-slate-950 dark:text-gray-400;
+	}
+
+	:global(body) {
+		@apply min-h-screen pt-12 antialiased;
 	}
 </style>
