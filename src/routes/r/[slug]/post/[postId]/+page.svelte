@@ -1,27 +1,23 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { getClasses } from '$lib/utils/css-classes';
+	import Comment from '$lib/components/Comment/Comment.svelte';
+	import CommentForm from '$lib/components/CommentForm/CommentForm.svelte';
+	import Post from '$lib/components/Post/Post.svelte';
 
-	let date: string;
-	const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' } as const;
-	const dateTimeFormat1 = new Intl.DateTimeFormat('en-GB', options);
+	const isLoggedIn = $page.data.session && $page.data.session?.user !== null;
 
-	$: {
-		const d1 = new Date($page.data.post.updatedAt);
-		date = dateTimeFormat1.format(d1);
-	}
+	getClasses('controls');
 </script>
 
-<div>
-	<a href="/r/{$page.data.post.Subreddit.name}">
-		r/{$page.data.post.Subreddit.name}
-	</a>
-	<small>
-		Posted by r/{$page.data.post.author.name} on {date}
-	</small>
+<div class="mb-6">
+	<Post post={$page.data.post} />
 </div>
-<h1>
-	{$page.data.post.title}
-</h1>
-<p>
-	{$page.data.post.content.text}
-</p>
+
+{#if isLoggedIn}
+	<CommentForm />
+{/if}
+
+{#each $page.data.post.comments as comment}
+	<Comment {comment} />
+{/each}

@@ -3,9 +3,13 @@
 	import Navbar from '$lib/components/Navbar/Navbar.svelte';
 </script>
 
+<svelte:head>
+	<title>Cattit: Paws and Posts</title>
+</svelte:head>
+
 <Navbar />
 
-<div class="container mx-auto h-full max-w-7xl pt-12">
+<div class="container mx-auto h-full max-w-7xl px-4 pt-12">
 	<slot />
 </div>
 
